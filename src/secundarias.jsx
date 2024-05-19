@@ -1,17 +1,18 @@
-import { Link } from 'react-router-dom';
-import './secundarias.css'
-import PropTypes from 'prop-types';
+import Lightbox from './Lightbox'
+import PropTypes from 'prop-types'
+import { useState } from 'react'
+export default function Secundaria({ images, folder, texto, juegoUrl, longTitle }) {
 
-export default function Secundaria({ images, texto, juegoUrl }) {
-    
+    const [picture, setPicture] = useState({ image: null })
+    const closePicture = () => setPicture({ image: null })
+    const imageList = images.map(({ img, alt }, index) => (
+        <div key={img} className="image-container" style={{ cursor: 'pointer' }}>
+            <img src={`Miniaturas/${folder}/${img}`} alt={`Thumbnail ${alt}`} className="hover-shadow" onClick={() => setPicture({ image: index })} />
+        </div>
+    ))
     return (
         <section>
-            <header className="menu-container">
-                <Link to="/" className="logo">
-                    <img src="../img/principal/HeaderWebUniversae.png" alt="Logo de Universae" />
-                </Link>
-            </header>
-
+            <Lightbox images={images} folder={folder} title={longTitle} selected={picture.image} setClosed={closePicture} />
             <div className='extincion'>
 
                 <main className='juego-container'>
@@ -27,11 +28,7 @@ export default function Secundaria({ images, texto, juegoUrl }) {
 
                     <div className="row">
                         <div className="imagesJuego">
-                            {images.map((image, index) => (
-                                <div key={index} className="image-container">
-                                    <img src={image} alt={`Thumbnail ${index}`} className="hover-shadow" />
-                                </div>
-                            ))}
+                            {imageList}
                         </div>
                     </div>
 
@@ -69,12 +66,14 @@ export default function Secundaria({ images, texto, juegoUrl }) {
                     </div>
                 </div>
             </footer>
-</section>
-    );
+        </section>
+    )
 }
 
 Secundaria.propTypes = {
     images: PropTypes.array.isRequired, // Valida que 'images' sea un array y sea requerido
+    folder: PropTypes.string.isRequired, // Valida que 'folder' sea un string y sea requerido
     texto: PropTypes.element.isRequired, // Valida que 'texto' sea un elemento de React y sea requerido
+    longTitle: PropTypes.string.isRequired, // Valida que 'longTitle' sea un string y sea requerido
     juegoUrl: PropTypes.string.isRequired, // Valida que 'juegoUrl' sea un string y sea requerido
-    };
+}

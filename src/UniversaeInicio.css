@@ -16,11 +16,17 @@
 }
 
 .gamePic{
+    position: relative;
+    transform: scale(1);
+    filter: grayscale(0);
     
     transition: transform 0.3s ease;
 }
 
-.gamePicHover:hover{
+.gamePic:hover{
+    z-index: 99;
     transform: scale(1.2);
+
+
     cursor: pointer;
 }

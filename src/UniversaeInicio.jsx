@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
-import './UniversaeInicio.css';
+
+import PropTypes from 'prop-types'
+import './UniversaeInicio.css'
 
 
-export function UniversaeInicio ({ imageName }){
-    const [isHovered, setIsHovered] = useState(false);
+export function UniversaeInicio({ image, title }) {
+
 
     return (
         <div className='imageContainer'>
-            <img 
-                src={`../img/principal/${imageName}.png`}
-                alt={imageName} 
-                className={isHovered ? "gamePicHover" : "gamePic"}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
+            <img
+                src={`${image}`}
+                alt={title}
+                className="gamePic"
+
             />
         </div>
-    );
+    )
+}
+
+
+UniversaeInicio.propTypes = {
+    image: PropTypes.string.isRequired, // Valida que 'image' sea un string y sea requerido
+    title: PropTypes.string.isRequired, // Valida que 'alt' sea un string y sea requerido
 }
