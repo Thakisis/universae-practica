@@ -1,0 +1,26 @@
+.imagesBox{
+    background-color: #B6E1F9;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-left: 200px;
+    padding-right: 200px;
+    height: 75%;
+    transition: transform 0.3s ease;
+}
+
+.imageContainer{
+    transition: transform 0.3s ease
+
+}
+
+.gamePic{
+    
+    transition: transform 0.3s ease;
+}
+
+.gamePicHover:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}

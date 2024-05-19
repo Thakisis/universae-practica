@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    text-decoration: none;
+    list-style: none;
+}
+
+@font-face {
+    font-family: 'Raleway Medium';
+    src: url(Raleway-Medium.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Raleway Medium', sans-serif;
+}
+
+header {
+    height: 100px;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #134c8f;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100px !important;
+    margin-left: 20px;
+}
+
+body {
+    background-color: #B6E1F9;
+}
+
+.activitiesContainer {
+    background-color: #B6E1F9;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-left: 200px;
+    padding-right: 200px;
+    height: 75%;
+}
+
+footer {
+    height: 60px;
+    background-color: #134c8f;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+.RRSS {
+    display: flex;
+    justify-content: center;
+}
+
+.RRSS a i {
+    color: white;
+    font-size: 30px;
+    margin: 0 10px;
+}
+
+.RRSS a:hover i {
+    color: aqua;
+}
+
+.juego {
+    margin-left: 200px;
+    margin-bottom: 15px;
+    height: 660px;
+    width: 800px;
+}
+
+.juego-container {
+    margin-top: 5px;
+}
+
+.info {
+    flex: 1;
+    margin-right: 20px;
+    margin-left: 20px;
+    max-width: 45%;
+}
+
+.info-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-bottom: 650px;
+}
+
+.info h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.info p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.imagesJuego {
+    position: absolute;
+    top: 785px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.hover-shadow {
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 25px;
+    margin-bottom: 30px;
+}
+
+.row>.imagesJuego {
+    padding: 0 8px;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Crear tres columnas iguales flotantes*/
+.imagesJuego {
+    float: left;
+    width: 33%;
+}
